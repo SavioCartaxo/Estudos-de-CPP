@@ -8,6 +8,6 @@ int main(){
     soma = b*c;
     cin >> a >> b >> c;
     soma += b*c;
-    cout << "VALOR A PAGAR: R$ " << fixed << setprecision(2) << soma;
+    cout << "VALOR A PAGAR: R$ " << fixed << setprecision(2) << soma << endl;
     return 0;
 }
