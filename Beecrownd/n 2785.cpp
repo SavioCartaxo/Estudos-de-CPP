@@ -5,50 +5,48 @@ int main() {
     int n;
     cin >> n;
 
-    int s = 0;
     vector<vector<int>> m(n);
 
     // Leitura da matriz
+    int x;
     for (int i = 0; i < n; i++) {
-        int val;
         for (int j = 0; j < n; j++) {
-            cin >> val;
-            m[i].push_back(val);
+            cin >> x;
+            m[i].push_back(x);
         }
     }
 
-    int t = 0;
-    while (!m[0].empty()) {
-        vector<int> lm;
-
-        for (int c = 0; c < m[0].size(); c++) {
-            int sc = 0;
-            for (int l = t; l < n; l++) {
-                sc += m[l][c];
+    int s = 0;
+    vector<int> lista; // soma das colunas
+    
+    while(n != 0){
+        lista.clear();
+        for (int c = 0; c < n; c++) {
+            int sco = 0;
+            for (int l = 0; l < n; l++) {
+                sco += m[l][c];
             }
-            lm.push_back(sc);
+            lista.push_back(sco);
         }
 
-        // Acha o índice da menor soma
-        int menor = lm[0];
+        int menor = lista[0];
         int im = 0;
-        for (int i = 1; i < lm.size(); i++) {
-            if (lm[i] < menor) {
-                menor = lm[i];
+        for (int i = 1; i < (int)lista.size(); i++) {
+            if (lista[i] < menor) {
+                menor = lista[i];
                 im = i;
             }
         }
 
         s += menor;
+        n -= 1;
 
-        // Remove a coluna 'im' de cada linha
-        for (int i = 0; i < n; i++) {
+        m.erase(m.begin());
+        for (int i = 0; i < (int)m[0].size(); i++) {
             m[i].erase(m[i].begin() + im);
         }
-
-        t += 1;
     }
-
+    
     cout << s << endl;
     return 0;
 }
