@@ -38,13 +38,13 @@ int main() {
             }
         }
 
-        s += menor;
-        n -= 1;
-
         m.erase(m.begin());
         for (int i = 0; i < (int)m[0].size(); i++) {
             m[i].erase(m[i].begin() + im);
         }
+
+        s += menor;
+        n -= 1;
     }
     
     cout << s << endl;
