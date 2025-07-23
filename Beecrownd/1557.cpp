@@ -1,36 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int contador(int n){
-    int c = 0;
-    while (n > 0){
-        n = n/10;
-        c++;
-    }
-    return c;
-}
+int main() {
 
-int main(){
-    int n;
-    while (cin >> n && n != 0){
+    int a;
+    while (cin >> a && a != 0) {
 
-        int m[n][n];
+        int b = pow(2, (2 * a - 2));
+        int tamanho = to_string(b).size();
         
-        for (int i = 0; i < n; i++)
-            for (int j = n - 1; j >= 0; j--)
-                m[i][j] = (int) pow(2, (j + i));
+        int inicial = 1;
 
+        for (int i = 0; i < a; i++) {
+            int t = inicial;
+            for (int j = 0; j < a; j++) {
+                cout << setw(tamanho) << t;
+                t *= 2;
 
-        for (int i = 0; i < n; i++){
-            for (int j =0 ; j < n; j++){
-                cout << setw(contador(m[n-1][n-1])) << m[i][j];
-                if (j != n-1) cout << ' ';
+                if (j != a - 1) {
+                    cout << " ";
+                }
             }
 
             cout << endl;
+            inicial *= 2;
         }
-        cout << endl;
-    }
     
+        cout << endl;
+    
+    }
+
     return 0;
 }
