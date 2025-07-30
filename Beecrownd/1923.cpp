@@ -1,43 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n, G;
-    cin >> n >> G;
+map<string, int> nomeParaIndice;
+vector<string> indiceParaNome;
+vector<vector<int>> grafo;
+vector<int> dist;
 
-    // Mapeia nome da pessoa para um índice
-    map<string, int> nomeParaIndice;
-    vector<string> indiceParaNome; // índice -> nome
-
-    vector<vector<int>> grafo; // grafo com índice inteiro
-
-    auto getIndice = [&](const string& nome) {
-        if (nomeParaIndice.count(nome)) return nomeParaIndice[nome];
-        int novoIndice = (int) indiceParaNome.size();
-        nomeParaIndice[nome] = novoIndice;
-        indiceParaNome.push_back(nome);
-        grafo.push_back({});
-        return novoIndice;
-    };
-
-    // Lê relações e constrói o grafo
-    for (int i = 0; i < n; i++) {
-        string a, b;
-        cin >> a >> b;
-        int u = getIndice(a);
-        int v = getIndice(b);
-        grafo[u].push_back(v);
-        grafo[v].push_back(u); // a relação é mútua
+int getIndice(string nome) {
+    if (nomeParaIndice.count(nome)) {
+        return nomeParaIndice[nome];
     }
 
-    // Prepara BFS
-    int origem = nomeParaIndice["Rerisson"];
-    vector<int> dist(grafo.size(), INT_MAX);
-    queue<int> fila;
-    fila.push(origem);
-    dist[origem] = 0;
+    int novoIndice = (int) indiceParaNome.size();
+    nomeParaIndice[nome] = novoIndice;
+    indiceParaNome.push_back(nome);
+    grafo.push_back({});
+    
+    return novoIndice;
+}
 
-    // BFS para calcular distâncias
+void bfs(int origem) {
+    dist.assign(grafo.size(), INT_MAX);
+    queue<int> fila;
+    dist[origem] = 0;
+    fila.push(origem);
+
     while (!fila.empty()) {
         int atual = fila.front();
         fila.pop();
@@ -49,8 +36,24 @@ int main() {
             }
         }
     }
+}
 
-    // Coletar os convidados com distância ≤ G
+int main() {
+    int n, G;
+    cin >> n >> G;
+
+    string a, b;
+    for (int i = 0; i < n; i++) {
+        cin >> a >> b;
+        int u = getIndice(a);
+        int v = getIndice(b);
+        grafo[u].push_back(v);
+        grafo[v].push_back(u); // relação mútua
+    }
+
+    int origem = getIndice("Rerisson");
+    bfs(origem);
+
     vector<string> convidados;
     for (int i = 0; i < (int) dist.size(); i++) {
         if (i != origem && dist[i] <= G) {
@@ -60,7 +63,6 @@ int main() {
 
     sort(convidados.begin(), convidados.end());
 
-    // Imprime resultado
     cout << convidados.size() << "\n";
     for (const string& nome : convidados)
         cout << nome << "\n";
