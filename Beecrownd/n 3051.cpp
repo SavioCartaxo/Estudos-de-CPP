@@ -1,31 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 using vi = vector<int>;
-using vii = vector<vi>;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n, k;
     cin >> n >> k;
 
-    vii m(n, vi(n,0));
-
+    vi m(n,0);
     for(int i = 0; i < n; i++) {
-        cin >> m[0][i];
+        cin >> m[i];
+        m[i] = m[i];
     }
 
     int c = 0;
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n - i; j++) {
-            if (i != 0) {   
-                m[i][j] = m[i - 1][j] + m[0][j + i];
-                if (m[i][j] == k) c++;
-            } else {
-                if (m[0][j] == k) c++;
-            }
+    int e=0, s=0;
+
+    for (int d = 0; d < n; d++) {
+        s += m[d];
+
+        while (s > k && e <= d) {
+            s -= m[e];
+            e++;
         }
+
+        if (s == k) c++;
     }
 
-    cout << c << endl;
+    cout << c << '\n';
 
     return 0;
 }
