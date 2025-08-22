@@ -1,47 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define INF 1000000000
+
 int main() {
-    
-    int n, k, c;
-    cin >> n >> k >> c;
+    ios::sync_with_stdio(false); cin.tie(0);
 
-    vector<int> v;
-    int a;
-    for(int i = 0; i < n; i++) {
-        cin >> a;
-        v.push_back(a);
+    int n, K, c;
+    cin >> n >> K >> c;
+
+    vector<int> v(n+1);
+    vector<vector<int>> m(K+1,vector<int>(n+1,-INF));
+    m[0][0] = 0;
+    for(int i = 1; i <= n; i++) {
+        cin >> v[i];
+        m[0][i] = m[0][i-1] + v[i];
     }
 
-    int s;
-    while (k != 0) {
-        vector<int> soma = {};
+    //DP
+    for(int k = 1; k <= K; k++)
+        for(int i = K*c; i <= n; i++)
+            m[k][i] = max(m[k - 1][i - c], m[k][i - 1]+v[i]);
 
-        for(int i = 0; i <= n - c; i++) {
-            s = 0;
-            for(int j = i; j < i + c; j++) {
-                s += v[j];
-            }
-            
-            soma.push_back(s);
-        }
-
-        int ind_min = min_element(soma.begin(), soma.end()) - soma.begin();
-
-        for(int i = 0; i < c; i++) {
-            v.erase(v.begin() + ind_min);
-        }
-
-        k--;
-        n-= c;
-    }
-
-    s = 0;
-    for(int x : v) {
-        s+=x;
-    }
-
-    cout  << s << endl;
+    cout << m[K][n] << '\n';
 
     return 0;
 }
