@@ -22,11 +22,10 @@ int main(){
             v.push_back(v[i++] + x);
         }
 
-        for (int x = 0; x < q; x++) {
+        while (q-- > 0) {
             cin >> l >> r >> k;
-            ss = v[r] - v[l - 1];
-            s = v[n] - ss + k * (r - l + 1);
-            
+            s = v[n] - (v[r] - v[l - 1]) + k * (r - l + 1);
+
             if (s % 2 == 0)
                 cout << "NO" << endl;
             else

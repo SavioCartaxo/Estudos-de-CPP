@@ -16,20 +16,21 @@ int main(){
         v.push_back(x);
     }
     
-    int i = 0, f = 0;
-    int contadorAtual = 0, max = 0;
+    int i = 0, f = 0, ca = 0, max = 0;
     set<int> s;
     while (f < n) {
+        
         if (!s.count(v[f])) {
             s.insert(v[f++]);
-            contadorAtual++;
+            ca++;
+        
         } else {
             s.erase(v[i++]);
-            contadorAtual--;
+            ca--;
         }
 
-        if (contadorAtual > max)
-            max = contadorAtual;
+        if (ca > max)
+            max = ca;
     }
 
     cout << max << endl;

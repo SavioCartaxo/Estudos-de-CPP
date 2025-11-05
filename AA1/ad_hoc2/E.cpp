@@ -24,7 +24,7 @@ int main(){
         int alvo = x - v[i];
         if (m.count(alvo) && i+1 != m[alvo]) {
             cout << i+1 << ' ' << m[alvo] << endl;
-            break;
+            return 0;
         }
 
         if (i+1 >= n) 

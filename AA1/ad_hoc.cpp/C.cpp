@@ -5,11 +5,13 @@ bool primo(int a){
     if (a < 2) {
         return false;
     }
-    
-    for (int i = 2; i <= sqrt(a); i++){
+
+    int i = 2;
+    while (i++ <= sqrt(a)) {
         if (a % i == 0)
-            return false;
+            return false;    
     }
+    
     return true;
 }
 

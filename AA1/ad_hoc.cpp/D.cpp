@@ -10,8 +10,6 @@ int main(){
             b.set(i);
     }
 
-    unsigned long long n = b.to_ullong();
-
-    cout << n << endl;
+    cout << b.to_ullong() << endl;
     return 0;
 }

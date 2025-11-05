@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    freopen("bcount.in", "r", stdin);
-    freopen("bcount.out", "w", stdout);
+ int main(){
+     freopen("bcount.in", "r", stdin);
+     freopen("bcount.out", "w", stdout);
     
     int n, q;
     cin >> n >> q;
@@ -31,7 +31,8 @@ int main(){
         }
     }
     int a, b;
-    for (int i = 0; i < q; i++) {
+
+    while (q-- > 0) {
         cin >> a >> b;
         cout << m[0][b] - m[0][a-1] << ' ' << m[1][b] - m[1][a-1] << ' ' << m[2][b] - m[2][a-1] << endl;
     }

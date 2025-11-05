@@ -19,3 +19,23 @@ int main(){
 
     return 0;
 }
+
+// OBS.:
+
+// int invertido = 0;
+// while (x > 0) {
+//     invertido = invertido * 10 + (x % 10);
+//     x /= 10;
+// }
+
+// bool ehPalindromo(int x) {
+//     if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+
+//     int invertido = 0;
+//     while (x > invertido) {
+//         invertido = invertido * 10 + x % 10;
+//         x /= 10;
+//     }
+//     // número com dígitos pares ou ímpares
+//     return (x == invertido) || (x == invertido / 10);
+// }

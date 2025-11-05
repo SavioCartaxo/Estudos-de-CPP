@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// obs.: sempre usar long long em soma acumulada
+
 int main(){
     int n, q;
     cin >> n >> q;

@@ -17,7 +17,7 @@ int main(){
     }
 
     int a, b;
-    for (int i = 1; i <= q; i++){
+    while (q-- > 0){
         cin >> a >> b;
         cout << (v[a-1] ^ v[b]) << endl;
     }

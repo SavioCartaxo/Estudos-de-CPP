@@ -33,14 +33,14 @@ int main(){
                 }
             }
 
-            if (s[x] == 'B') {
+            else if (s[x] == 'B') {
                 if (x <= n-2 && x >= 1) {
                     if (s[x-1] == 'A' && s[x+1] == 'C')
                         c--;
                 }
             }
 
-            if (s[x] == 'C') {
+            else if (s[x] == 'C') {
                 if (x >= 2) {
                     if (s[x-2] == 'A' && s[x-1] == 'B')
                         c--;
@@ -54,14 +54,14 @@ int main(){
                 }
             }
 
-            if (c1 == 'B') {
+            else if (c1 == 'B') {
                 if (x <= n-2 && x >= 1) {
                     if (s[x-1] == 'A' && s[x+1] == 'C')
                         c++;
                 }
             }
 
-            if (c1 == 'C') {
+            else if (c1 == 'C') {
                 if (x >= 2) {
                     if (s[x-2] == 'A' && s[x-1] == 'B')
                         c++;
