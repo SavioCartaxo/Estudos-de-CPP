@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+using vi = vector<int>;
 
-#define INF 1e9 + 1
-#define NEG_INF -INF - 2
+#define INF 1e10
+#define NEG_INF -INF
 
-int bb(int a, vector<int> v){
+int bb(int a, vi v){
     int i = 0;
     int f = v.size() - 1;
     int m;
@@ -26,37 +27,39 @@ int bb(int a, vector<int> v){
     return 0;
 }
 
-int main(){
-    int n, m;
-    cin >> n >> m;
-
-    vector<int> vn;
-    cin.ignore();
+vi ler() {
     string linha;
     getline(cin, linha);
     stringstream ss(linha);
     int x;
-    while (ss >> x){
-        vn.push_back(x);
-    } 
+    vi res;
+    while (ss >> x) res.push_back(x);
+    return res;
+}
+
+
+int main(){
+    int n, m;
+    cin >> n >> m;
+
+    cin.ignore();
+    vi vn = ler();
     vn.push_back(NEG_INF); 
     vn.push_back(INF);
     
-    vector<int> vm;
-    getline(cin, linha);
-    stringstream nn(linha);
-    while (nn >> x){
-        vm.push_back(x);
-    }
+    vi vm = ler();
 
     sort(vn.begin(), vn.end());
 
-    for (int i = 0; i < m; i++){
-        cout << bb(vm[i], vn);
+    ostringstream oss;
+    oss << bb(vm[0], vn);
+    for (int i = 1; i < m; i++) {
+        oss << ' ';
+        oss << bb(vm[i], vn);
+    }
 
-        if (i != m-1) 
-            cout << ' ';
-    } cout << endl;
+    cout << oss.str() << endl;
+
 
     return 0;
 }
