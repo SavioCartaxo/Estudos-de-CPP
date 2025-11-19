@@ -5,7 +5,7 @@ using vi = vector<int>;
 #define INF 1e10
 #define NEG_INF -INF
 
-int bb(int a, vi v){
+int bb(int a, vi &v){
     int i = 0;
     int f = v.size() - 1;
     int m;
@@ -27,39 +27,32 @@ int bb(int a, vi v){
     return 0;
 }
 
-vi ler() {
-    string linha;
-    getline(cin, linha);
-    stringstream ss(linha);
-    int x;
-    vi res;
-    while (ss >> x) res.push_back(x);
-    return res;
-}
-
-
 int main(){
+    ios::sync_with_stdio(false); 
+    cin.tie(NULL);
+    
     int n, m;
     cin >> n >> m;
 
     cin.ignore();
-    vi vn = ler();
-    vn.push_back(NEG_INF); 
-    vn.push_back(INF);
+    vi vn(n+2);
+    vn[0] = (NEG_INF); 
+    vn[n+1] = INF;
     
-    vi vm = ler();
-
+    for (int i = 1; i <= n; i ++) {
+        cin >> vn[i];
+    }
+    
+    vi vm(m);
+    for (int i = 0; i < m; i ++) {
+        cin >> vm[i];
+    }
     sort(vn.begin(), vn.end());
 
-    ostringstream oss;
-    oss << bb(vm[0], vn);
+    cout << bb(vm[0], vn);
     for (int i = 1; i < m; i++) {
-        oss << ' ';
-        oss << bb(vm[i], vn);
+        cout << ' ' << bb(vm[i], vn);
     }
-
-    cout << oss.str() << endl;
-
 
     return 0;
 }
