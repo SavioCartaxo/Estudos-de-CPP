@@ -1,51 +1,69 @@
-# 🧠 Estudos de C++ - Programação Competitiva
+# 🧠 Estudos de Algoritmos
 
-Este repositório reúne meus estudos e práticas em **C++**, com foco total em **algoritmos e programação competitiva**.
+Este repositório reúne meus estudos e práticas focados principalmente em **algoritmos** e **programação competitiva**, com implementações majoritariamente em **C++**, além de algumas soluções em **Java**.
 
-Meu objetivo é desenvolver uma base sólida em **estruturas de dados** e **técnicas algorítmicas**, visando o aprimoramento constante para competições como a **OBI (Olimpíada Brasileira de Informática)**.
+Meu objetivo é desenvolver domínio em **estruturas de dados**, **técnicas algorítmicas** e **resolução de problemas** de competições e juízes online.
 
-> 💡 O foco **não é POO (Programação Orientada a Objetos)**, mas sim o domínio de lógica, análise de complexidade e resolução de problemas.
+> 💡 O foco **não é POO**, mas sim lógica, eficiência e construção de soluções rápidas e robustas.
 
 ---
 
 ## 📁 Estrutura do Repositório
 
-### 📁 `Aprendendo C++`
-Nesta pasta estão os **conteúdos teóricos e práticos** do aprendizado de C++, organizados de forma progressiva:
-- Sintaxe e fundamentos da linguagem  
-- Estruturas condicionais e laços  
-- Vetores e strings  
-- Funções e modularização  
-- Manipulação de matrizes  
-- Busca e ordenação  
-- Introdução a algoritmos clássicos
+### 📁 `01_Algoritmos_e_Estruturas_de_Dados`
+Reúne as **estruturas fundamentais** e algoritmos clássicos utilizados em competições, além de anotações importantes sobre seu uso:
+- Vetores, matrizes e strings  
+- Pilhas, filas e listas  
+- Mapas e conjuntos  
+- Algoritmos de busca e ordenação  
+- Técnicas básicas para grafos (BFS, DFS, etc.)  
+- Dicas e observações úteis para resolver problemas competitivos  
 
 ---
 
-### 📁 `Algoritmos`
-Contém **implementações puras de algoritmos e estruturas de dados**, com foco em aplicações diretas na programação competitiva:
-- Busca linear e binária  
-- Ordenações (bubble, insertion, merge sort, quicksort, etc.)  
-- Estruturas de dados (pilhas, filas, listas, mapas)  
-- Grafos (BFS, DFS, Dijkstra)  
-- Programação dinâmica (PD)
+### 📁 `AA1`
+Material referente à disciplina de **Algoritmos Avançados**.
+
+Nesta pasta estão:
+- Contests realizados durante a disciplina  
+- Soluções de exercícios aplicados no contexto da matéria  
 
 ---
 
 ### 📁 `Beecrowd`
-Nesta pasta estão as **resoluções de problemas** da plataforma **beecrowd**, nomeadas de acordo com o número da questão.
+Coleção das **soluções de problemas** da plataforma **Beecrowd**, nomeadas conforme o número da questão.
 
-Exemplo:
- - 1001.cpp → Resolução da questão 1001
- - 1037.cpp → Resolução da questão 1037
+Exemplos:
+ - 1001.cpp  
+ - 1037.cpp  
 
-
-Cada arquivo contém apenas o código-fonte da solução em C++, conforme o formato de entrada e saída exigido pelo site.
+Cada arquivo contém apenas a solução necessária conforme o formato de entrada/saída exigido pelo site.
 
 ---
 
-### 📁 `Provas`
-Contém as **provas e simulados** de olimpíadas e competições que utilizo para **treinar algoritmos**.  
-Os arquivos são organizados por evento e ano, permitindo revisar estratégias e comparar desempenho entre edições.
+### 📁 `Codeforces`
+
+Organizado em duas subdivisões:
+
+#### 📂 `contest`
+Contém os contests que participei na Codeforces, organizados por data:
+ - 06_11_2025/  
+ - 15_08_2025/  
+
+Cada pasta inclui todas as soluções da respectiva rodada.
+
+#### 📂 `Questões`
+Soluções individuais de problemas específicos da plataforma, nomeadas pelo código da questão:
+ - 2054_A.cpp  
+ - 2155_A.cpp  
+
+Útil para consulta rápida e prática contínua.
+
+---
+
+## 💻 Linguagens Utilizadas
+
+- **C++** (principal linguagem, foco dos estudos)  
+- **Java** (usada em alguns exercícios e soluções específicas)  
 
 ---
