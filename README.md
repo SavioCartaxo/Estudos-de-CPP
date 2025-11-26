@@ -10,7 +10,7 @@ Meu objetivo é desenvolver domínio em **estruturas de dados**, **técnicas alg
 
 ## 📁 Estrutura do Repositório
 
-### 📁 `01_Algoritmos_e_Estruturas_de_Dados`
+### 📁 [`Algoritmos_e_Estruturas_de_Dados`](https://github.com/SavioCartaxo/Estruturas_de_Dados_e_Algoritmos/tree/main/00_Algoritmos_e_Estruturas_de_dados)
 Reúne as **estruturas fundamentais** e algoritmos clássicos utilizados em competições, além de anotações importantes sobre seu uso:
 - Vetores, matrizes e strings  
 - Pilhas, filas e listas  
@@ -21,8 +21,8 @@ Reúne as **estruturas fundamentais** e algoritmos clássicos utilizados em comp
 
 ---
 
-### 📁 `AA1`
-Material referente à disciplina de **Algoritmos Avançados**.
+### 📁 [`AA1`](https://github.com/SavioCartaxo/Estruturas_de_Dados_e_Algoritmos/tree/main/03_AA1)
+Material referente à disciplina de **Algoritmos Avançados**, do Curso de Ciência da Computação na UFCG, em 2025.
 
 Nesta pasta estão:
 - Contests realizados durante a disciplina  
@@ -30,7 +30,7 @@ Nesta pasta estão:
 
 ---
 
-### 📁 `Beecrowd`
+### 📁 [`Beecrowd`](https://github.com/SavioCartaxo/Estruturas_de_Dados_e_Algoritmos/tree/main/01_Beecrownd)
 Coleção das **soluções de problemas** da plataforma **Beecrowd**, nomeadas conforme o número da questão.
 
 Exemplos:
@@ -41,14 +41,14 @@ Cada arquivo contém apenas a solução necessária conforme o formato de entrad
 
 ---
 
-### 📁 `Codeforces`
+### 📁 [`Codeforces`](https://github.com/SavioCartaxo/Estruturas_de_Dados_e_Algoritmos/tree/main/02_Codeforces)
 
 Organizado em duas subdivisões:
 
 #### 📂 `contest`
 Contém os contests que participei na Codeforces, organizados por data:
- - 06_11_2025/  
- - 15_08_2025/  
+ - 06_11_2025/
+ - 15_08_2025/
 
 Cada pasta inclui todas as soluções da respectiva rodada.
 
@@ -65,5 +65,3 @@ Soluções individuais de problemas específicos da plataforma, nomeadas pelo c�
 
 - **C++** (principal linguagem, foco dos estudos)  
 - **Java** (usada em alguns exercícios e soluções específicas)  
-
----
