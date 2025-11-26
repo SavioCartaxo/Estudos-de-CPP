@@ -15,42 +15,25 @@ int main() {
     }
     sort(v.begin(), v.end());
 
-    ll mid_array = (n / 2) + 1, l = mid_array + 1;
-    while(k >= 0) {
+    ll mid_array = (n / 2), l = mid_array + 1;
+    
+    while(k > 0) {
         
         if (l >= n) {
             break;
-
-        } else if (v[mid_array] == v[l]) {
-            l++;
-
         } else {
-            ll dist = l - mid_array;
-            ll dif = v[l] - v[mid_array];
-            // k -= dist * (v[l] - v[mid_array]);
+            ll sub = (l - mid_array) * (v[l] - v[mid_array]);
             
-            ll f = k - (dist * dif);
-            ll i = 0, r;
-            
-            while (i <= f) {
-                ll meio = (i + f) / 2;
-
-                if ((k - meio) < 0) {
-                    f = meio - 1; 
-                
-                } else {
-                    r = meio;
-                    i = meio + 1;
-                }
+            if (sub <= k) {
+                k -= sub;
+            } else {
+                break;
             }
 
-            k -= r;
             v[mid_array] = v[l++];
         }
-
     }
-
-    cout << v[mid_array] + (k / n) << endl;
-
+    
+    cout << v[mid_array] + ((int) (k / (l - mid_array))) << endl;
     return 0;
 }
