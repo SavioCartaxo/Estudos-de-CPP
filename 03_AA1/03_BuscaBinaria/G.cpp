@@ -1,52 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
-using vi = vector<int>;
 
+#define ll long long
+#define vi vector<ll>
 #define pb push_back
-int c = 0;
-
-vi line(){
-    string linha;
-    getline(cin, linha);
-    stringstream ss(linha);
-    vi v; int x;
-    while (ss >> x) {v.pb(x); c+= x;}
-    return v;
-}
 
 int main(){
-    int n, k;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll n, k;
     cin >> n >> k;
-    cin.ignore();
     
-    vi v = line();
+    vi v(n);
+    for (ll i = 0; i < n; i++) {
+        cin >> v[i];
+    }
 
-    while (true) {
-        int s = 0, subarrays = 0;
-        for (int i = 0; i < (int) v.size(); i++){
-            
-            if (v[i] >= c) { // nao sei se esse if esta certo
-                subarrays++;
-                if (s > 0 && i != 0) {
-                    if (v[i-1] < c){
-                        subarrays++;
-                        s = 0;}
-                }
+    ll i = *max_element(v.begin(), v.end());
+    ll f =  accumulate(v.begin(), v.end(), 0LL);
+    ll mid, saida;
 
-            } else {
-                s += v[i];
-                if (s > c) {
-                    s = v[i];
-                    subarrays++;
+    while (i <= f) {
+        mid = (i + f) / 2;
 
-                }
+        ll sa = 0; // contador da soma acumulada
+        ll c = 1;  // contador das divisões feitas
+        for (ll x : v) {
+            sa += x;
+
+            if (sa > mid) {
+                sa = x;
+                c++;
             }
-
-            if (subarrays > k) break;
         }
 
-        if (subarrays == k) {cout << subarrays << endl; return 0;}
+        if (c <= k) {
+            saida = mid;
+            f = mid - 1;
+        } else {
+            i = mid + 1;
+        }
+        
     }
+
+    cout << saida << endl;
 
     return 0;
 }
